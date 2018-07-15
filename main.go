@@ -7,10 +7,11 @@ import (
 	"os"
 	"encoding/base64"
 	"os/exec"
+	"strings"
 )
 
 func usage() string {
-	return fmt.Sprintf("%s FILENAME", os.Args[0])
+	return fmt.Sprintf("usage: %s FILENAME", os.Args[0])
 }
 
 type Secret struct {
@@ -26,6 +27,9 @@ func exitWithError(msg string) {
 }
 
 func exitWithMessage(msg string, code int) {
+	if !strings.HasSuffix(msg, "\n") {
+		msg = fmt.Sprintf("%s\n", msg)
+	}
 	fmt.Fprintf(os.Stderr, msg)
 	os.Exit(code)
 }

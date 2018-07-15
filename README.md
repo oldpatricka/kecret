@@ -11,12 +11,6 @@ the editor. Handy!
 go get github.com/oldpatricka/kecret
 ```
 
-or get the binary:
-
-```
-TKTKTK
-```
-
 ## Usage
 
 Simply use kecret as your editor to edit your secret file like so:
@@ -27,6 +21,10 @@ kecret mysecret.yaml
 
 Your editor will display the decoded secret values which you can edit with ease.
 When you save, your secret file will automatically be re-encoded.
+
+## TODO
+
+* Add support for using kecret with `kubectl edit secret/whatever`
 
 ## Motivation
 
