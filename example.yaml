@@ -1,0 +1,8 @@
+apiVersion: v1
+data:
+  password: MWYyZDFlMmU2N2RmeHl6eg==
+  username: YWRtaW54enp6
+kind: Secret
+metadata:
+  name: mysecret
+type: Opaque
