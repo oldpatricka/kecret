@@ -25,6 +25,8 @@ When you save, your secret file will automatically be re-encoded.
 ## TODO
 
 * Add support for using kecret with `kubectl edit secret/whatever`
+* Some sanity checks
+* Passthrough when used as KUBE_EDITOR
 
 ## Motivation
 
@@ -59,8 +61,4 @@ kecret mysecret.yaml
 sops --encrypt mysecret.yaml > mysecret.enc.yaml
 ```
 
-Better! Less error prone!
-
-```
-
-
+I think this is much better.
