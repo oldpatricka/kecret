@@ -22,11 +22,19 @@ kecret mysecret.yaml
 Your editor will display the decoded secret values which you can edit with ease.
 When you save, your secret file will automatically be re-encoded.
 
+If you would like to edit your secret directly on a live Kubernetes system,
+use:
+
+```
+KUBE_EDITOR=kecret kubectl edit secrets/mysecret
+```
+
+You can also set KUBE_EDITOR in your shell to kecret, and if you attempt to edit
+something that isn't a secret, it will simply pass through to your EDITOR.
+
 ## TODO
 
-* Add support for using kecret with `kubectl edit secret/whatever`
-* Some sanity checks
-* Passthrough when used as KUBE_EDITOR
+* Some more sanity checks
 
 ## Motivation
 

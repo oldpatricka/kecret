@@ -1,11 +1,11 @@
 package main
 
 import (
+	"encoding/base64"
 	"fmt"
 	"gopkg.in/yaml.v2"
 	"io/ioutil"
 	"os"
-	"encoding/base64"
 	"os/exec"
 	"strings"
 )
@@ -99,7 +99,6 @@ func editFile(tempFileName string) error {
 
 func main() {
 
-
 	if len(os.Args) != 2 {
 		exitWithError(usage())
 	}
@@ -107,7 +106,12 @@ func main() {
 	secretFileName := os.Args[1]
 	s, err := decodeSecretFile(secretFileName)
 	if err != nil {
-		exitWithError(err.Error())
+		fmt.Fprintf(os.Stderr, "Couldn't decode secret, passing through to EDITOR...")
+		err = editFile(secretFileName)
+		if err != nil {
+			exitWithError(err.Error())
+		}
+		os.Exit(0)
 	}
 
 	decoded, err := yaml.Marshal(&s)
