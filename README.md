@@ -15,7 +15,7 @@ Or [download](https://github.com/oldpatricka/kecret/releases) latest release, an
 
 ```
 export PLATFORM="`uname`_`uname -m`"
-curl -L https://github.com/oldpatricka/kecret/releases/download/v0.1.0/kecret_0.1.0_$PLATFORM.tar.gz -o kecret.tar.gz
+curl -L https://github.com/oldpatricka/kecret/releases/download/v0.1.1/kecret_0.1.1_$PLATFORM.tar.gz -o kecret.tar.gz
 tar xzf kecret.tar.gz
 mv kecret /usr/local/bin
 ```
