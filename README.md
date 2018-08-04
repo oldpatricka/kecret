@@ -11,6 +11,15 @@ the editor. Handy!
 go get github.com/oldpatricka/kecret
 ```
 
+Or [download](https://github.com/oldpatricka/kecret/releases) latest release, and install to /usr/local/bin:
+
+```
+export PLATFORM="`uname`_`uname -m`"
+curl -L https://github.com/oldpatricka/kecret/releases/download/v0.1.0/kecret_0.1.0_$PLATFORM.tar.gz -o kecret.tar.gz
+tar xzf kecret.tar.gz
+mv kecret /usr/local/bin
+```
+
 ## Usage
 
 Simply use kecret as your editor to edit your secret file like so:
